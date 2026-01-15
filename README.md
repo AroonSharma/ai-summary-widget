@@ -4,7 +4,7 @@ Let visitors get an AI-powered summary of your website with one click. Supports 
 
 ![AI Summary Widget Preview](preview.png)
 
-Created by [Realmonkey](https://realmonkey.co/in) - Design & AI Consultancy
+Created by [Realmonkey](https://realmonkey.co) - Design & AI Consultancy
 
 ---
 
