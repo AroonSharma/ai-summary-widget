@@ -262,4 +262,4 @@ Created with ❤️ by [Realmonkey](https://realmonkey.co)
 
 - 🐛 [Report bugs](https://github.com/AroonSharma/ai-summary-widget/issues)
 - 💡 [Request features](https://github.com/AroonSharma/ai-summary-widget/issues)
-- 📧 [Contact](https://realmonkey.co/in/contact)
+- 📧 [Contact](https://realmonkey.co/contact)
