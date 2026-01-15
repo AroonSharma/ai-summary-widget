@@ -244,7 +244,7 @@ MIT License - Free for personal and commercial use.
 Created with ❤️ by [Realmonkey](https://realmonkey.co)
 
 - Design & AI Consultancy
-- Founder: [Aroon](https://linkedin.com/in/aroon)
+- Founder: [Aroon](www.linkedin.com/in/aroons)
 
 ---
 
