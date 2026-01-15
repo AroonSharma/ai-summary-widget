@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ask AI - Demo</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background: #fafafa;
+      color: #1f2937;
+    }
+    h1 { margin-bottom: 8px; }
+    .subtitle { color: #6b7280; margin-bottom: 40px; }
+    .demo {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .demo.dark {
+      background: #1f2937;
+      color: #f9fafb;
+    }
+    .demo h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #9ca3af;
+      margin: 0 0 16px 0;
+    }
+    pre {
+      background: #1f2937;
+      color: #e5e7eb;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 13px;
+      margin-top: 16px;
+    }
+    code { font-family: 'SF Mono', Monaco, monospace; }
+    .copy-section {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      margin-top: 40px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Ask AI 🤖</h1>
+  <p class="subtitle">Dead simple deep-links to AI services</p>
+
+  <!-- Demo 1: Default -->
+  <div class="demo">
+    <h3>Default (All Services)</h3>
+    <div id="demo1"></div>
+  </div>
+
+  <!-- Demo 2: Selected Services -->
+  <div class="demo">
+    <h3>Only ChatGPT & Claude</h3>
+    <div id="demo2"></div>
+  </div>
+
+  <!-- Demo 3: With Label -->
+  <div class="demo">
+    <h3>With Label</h3>
+    <div id="demo3"></div>
+  </div>
+
+  <!-- Demo 4: Dark Theme -->
+  <div class="demo dark">
+    <h3>Dark Theme</h3>
+    <div id="demo4"></div>
+  </div>
+
+  <!-- Demo 5: Small Size -->
+  <div class="demo">
+    <h3>Small Size</h3>
+    <div id="demo5"></div>
+  </div>
+
+  <!-- Demo 6: Large Size -->
+  <div class="demo">
+    <h3>Large Size</h3>
+    <div id="demo6"></div>
+  </div>
+
+  <!-- Copy Code Section -->
+  <div class="copy-section">
+    <h3 style="margin-top:0; color: #374151;">📋 Copy this code</h3>
+    <pre><code>&lt;div id="ask-ai"&gt;&lt;/div&gt;
+&lt;script src="https://cdn.jsdelivr.net/gh/AroonSharma/ai-summary-widget@latest/ask-ai.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  AskAI.render('#ask-ai', {
+    prompt: 'Tell me about YOUR COMPANY',
+    services: ['chatgpt', 'claude', 'perplexity', 'gemini', 'grok']
+  });
+&lt;/script&gt;</code></pre>
+  </div>
+
+  <!-- Load the script -->
+  <script src="ask-ai.js"></script>
+  <script>
+    // Demo 1: Default
+    AskAI.render('#demo1', {
+      prompt: 'Tell me about Realmonkey, a design and AI consultancy'
+    });
+
+    // Demo 2: Selected services
+    AskAI.render('#demo2', {
+      prompt: 'What is Realmonkey?',
+      services: ['chatgpt', 'claude']
+    });
+
+    // Demo 3: With label
+    AskAI.render('#demo3', {
+      prompt: 'Explain what this company does',
+      services: ['chatgpt', 'claude', 'perplexity'],
+      label: 'Ask AI →'
+    });
+
+    // Demo 4: Dark theme
+    AskAI.render('#demo4', {
+      prompt: 'Tell me about this company',
+      theme: 'dark'
+    });
+
+    // Demo 5: Small size
+    AskAI.render('#demo5', {
+      prompt: 'Quick summary',
+      size: 'sm'
+    });
+
+    // Demo 6: Large size
+    AskAI.render('#demo6', {
+      prompt: 'Detailed overview',
+      size: 'lg'
+    });
+  </script>
+
+</body>
+</html>
