@@ -1,0 +1,71 @@
+{
+  "name": "@realmonkey/ai-summary-widget",
+  "version": "1.0.0",
+  "description": "Let visitors get an AI-powered summary of your website with one click. Supports ChatGPT, Claude, Perplexity, Gemini, and Grok.",
+  "main": "ai-summary-widget.js",
+  "module": "react/AISummaryWidget.jsx",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./react/AISummaryWidget.jsx",
+      "require": "./ai-summary-widget.js"
+    },
+    "./react": {
+      "import": "./react/AISummaryWidget.jsx"
+    },
+    "./web-component": {
+      "import": "./ai-summary-widget.js"
+    }
+  },
+  "files": [
+    "ai-summary-widget.js",
+    "ai-summary-widget.min.js",
+    "react/",
+    "types/",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "npm run build:minify",
+    "build:minify": "terser ai-summary-widget.js -o ai-summary-widget.min.js -c -m",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/realmonkey/ai-summary-widget.git"
+  },
+  "keywords": [
+    "ai",
+    "chatgpt",
+    "claude",
+    "perplexity",
+    "gemini",
+    "grok",
+    "widget",
+    "web-component",
+    "react",
+    "summary",
+    "llm",
+    "ai-powered"
+  ],
+  "author": {
+    "name": "Realmonkey",
+    "email": "hello@realmonkey.in",
+    "url": "https://realmonkey.in"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/realmonkey/ai-summary-widget/issues"
+  },
+  "homepage": "https://github.com/realmonkey/ai-summary-widget#readme",
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "terser": "^5.24.0"
+  }
+}
