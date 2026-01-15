@@ -31,7 +31,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/realmonkey/ai-summary-widget.git"
+    "url": "git+https://github.com/AroonSharma/ai-summary-widget.git"
   },
   "keywords": [
     "ai",
@@ -49,14 +49,14 @@
   ],
   "author": {
     "name": "Realmonkey",
-    "email": "hello@realmonkey.in",
-    "url": "https://realmonkey.in"
+    "email": "hello@realmonkey.co",
+    "url": "https://realmonkey.co/in"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/realmonkey/ai-summary-widget/issues"
+    "url": "https://github.com/AroonSharma/ai-summary-widget/issues"
   },
-  "homepage": "https://github.com/realmonkey/ai-summary-widget#readme",
+  "homepage": "https://github.com/AroonSharma/ai-summary-widget#readme",
   "peerDependencies": {
     "react": ">=16.8.0"
   },

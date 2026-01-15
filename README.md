@@ -4,7 +4,7 @@ Let visitors get an AI-powered summary of your website with one click. Supports 
 
 ![AI Summary Widget Preview](preview.png)
 
-Created by [Realmonkey](https://realmonkey.in) - Design & AI Consultancy
+Created by [Realmonkey](https://realmonkey.co/in) - Design & AI Consultancy
 
 ---
 
@@ -16,7 +16,7 @@ Add this to your HTML - works on any website, Webflow, WordPress, Squarespace, e
 
 ```html
 <!-- Add the widget script -->
-<script src="https://cdn.jsdelivr.net/gh/realmonkey/ai-summary-widget@latest/ai-summary-widget.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/AroonSharma/ai-summary-widget@latest/ai-summary-widget.js"></script>
 
 <!-- Use the widget -->
 <ai-summary-widget
@@ -187,7 +187,7 @@ The widget creates deep links to AI platforms with your prompt pre-filled:
 ### CDN (Recommended)
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/realmonkey/ai-summary-widget@latest/ai-summary-widget.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/AroonSharma/ai-summary-widget@latest/ai-summary-widget.js"></script>
 ```
 
 ### NPM
@@ -241,10 +241,10 @@ MIT License - Free for personal and commercial use.
 
 ## 🙏 Credits
 
-Created with ❤️ by [Realmonkey](https://realmonkey.co)
+Created with ❤️ by [Realmonkey](https://realmonkey.co/in)
 
 - Design & AI Consultancy
-- Founder: [Aroon](www.linkedin.com/in/aroons)
+- Founder: [Aroon](https://linkedin.com/in/aroons)
 
 ---
 
@@ -260,6 +260,6 @@ Created with ❤️ by [Realmonkey](https://realmonkey.co)
 
 ## 📞 Support
 
-- 🐛 [Report bugs](https://github.com/realmonkey/ai-summary-widget/issues)
-- 💡 [Request features](https://github.com/realmonkey/ai-summary-widget/issues)
-- 📧 [Contact](https://realmonkey.in/contact)
+- 🐛 [Report bugs](https://github.com/AroonSharma/ai-summary-widget/issues)
+- 💡 [Request features](https://github.com/AroonSharma/ai-summary-widget/issues)
+- 📧 [Contact](https://realmonkey.co/in/contact)

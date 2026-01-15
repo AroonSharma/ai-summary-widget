@@ -1,6 +1,6 @@
 /**
  * AI Summary Widget - Web Component
- * Created by Realmonkey (https://realmonkey.in)
+ * Created by Realmonkey (https://realmonkey.co/in)
  * 
  * Usage:
  * 1. Add the script: <script src="https://cdn.jsdelivr.net/gh/YOUR_GITHUB/ai-summary-widget/ai-summary-widget.js"></script>
@@ -186,7 +186,7 @@ class AISummaryWidget extends HTMLElement {
             </a>
           `).join('')}
         </div>
-        <p class="footer">Powered by <a href="https://realmonkey.in" target="_blank">Realmonkey</a></p>
+        <p class="footer">Powered by <a href="https://realmonkey.co/in" target="_blank">Realmonkey</a></p>
       </div>
     `;
   }

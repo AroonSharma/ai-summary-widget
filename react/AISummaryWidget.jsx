@@ -1,6 +1,6 @@
 /**
  * AI Summary Widget - React Component
- * Created by Realmonkey (https://realmonkey.in)
+ * Created by Realmonkey (https://realmonkey.co/in)
  * 
  * Installation: npm install @realmonkey/ai-summary-widget
  * 
@@ -162,7 +162,7 @@ export function AISummaryWidget({
         <p style={styles.footer(theme)}>
           Powered by{' '}
           <a 
-            href="https://realmonkey.in" 
+            href="https://realmonkey.co/in" 
             target="_blank" 
             rel="noopener noreferrer"
             style={styles.footerLink}
