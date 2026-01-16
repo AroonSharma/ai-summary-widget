@@ -8,7 +8,7 @@ Supports: **ChatGPT, Claude, Perplexity, Gemini, Grok**
 
 ## 🔴 Live Preview
 
-See it in action on **[realmonkey.co](https://www.realmonkey.co)** (scroll to footer)
+See it in action on **[realmonkey.co](https://www.realmonkey.co)** (Just below the banner)
 
 ![Ask AI Preview](preview.png)
 
