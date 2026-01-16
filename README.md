@@ -6,6 +6,14 @@ Supports: **ChatGPT, Claude, Perplexity, Gemini, Grok**
 
 ---
 
+## 🔴 Live Preview
+
+See it in action on **[realmonkey.co](https://www.realmonkey.co)** (scroll to footer)
+
+![Ask AI Preview](preview.png)
+
+---
+
 ## Add to Your Website
 
 Copy this code and paste it where you want the buttons to appear:
@@ -61,6 +69,27 @@ services: ['perplexity']
 - `gemini` - Gemini
 - `grok` - Grok
 
+### Add heading and description
+
+```javascript
+AskAI.render('#ask-ai', {
+  prompt: 'Tell me about this company',
+  services: ['chatgpt', 'claude', 'perplexity', 'gemini', 'grok'],
+  heading: 'Request an AI summary of Acme Corp',
+  description: 'Click any AI to learn about our services instantly'
+});
+```
+
+### Center align
+
+```javascript
+AskAI.render('#ask-ai', {
+  prompt: 'Tell me about this company',
+  services: ['chatgpt', 'claude'],
+  align: 'center'
+});
+```
+
 ### Dark theme
 
 Add `theme: 'dark'` for dark backgrounds:
@@ -79,16 +108,6 @@ AskAI.render('#ask-ai', {
 size: 'sm'      // Small
 size: 'default' // Normal (default)
 size: 'lg'      // Large
-```
-
-### Add a label
-
-```javascript
-AskAI.render('#ask-ai', {
-  prompt: 'Tell me about this company',
-  services: ['chatgpt', 'claude'],
-  label: 'Ask AI:'
-});
 ```
 
 ---
@@ -110,4 +129,4 @@ MIT - Free for everyone.
 
 ---
 
-Created by [Realmonkey](https://realmonkey.co/in) • [Aroon](https://linkedin.com/in/aroons)
+Created by [Realmonkey](https://www.realmonkey.co) • [Aroon](https://linkedin.com/in/aroons)

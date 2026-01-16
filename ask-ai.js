@@ -2,9 +2,9 @@
  * Ask AI Widget
  * Simple deep-links to AI services
  * 
- * By Realmonkey (https://realmonkey.co/in)
+ * By Realmonkey (https://www.realmonkey.co)
  * 
- * USAGE (Vanilla JS):
+ * USAGE:
  * 
  * <div id="ask-ai"></div>
  * <script src="https://cdn.jsdelivr.net/gh/AroonSharma/ai-summary-widget@latest/ask-ai.min.js"></script>
@@ -20,7 +20,7 @@
   'use strict';
 
   // Service configurations
-  const SERVICES = {
+  var SERVICES = {
     chatgpt: {
       name: 'ChatGPT',
       url: 'https://chat.openai.com/',
@@ -43,7 +43,7 @@
       name: 'Gemini',
       url: 'https://gemini.google.com/app',
       param: 'q',
-      icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 24A14.3 14.3 0 0 0 12 0a14.18 14.18 0 0 0 0 24zM3.6 12c0-4.69 3.6-8.4 8.4-8.4V20.4c-4.8 0-8.4-3.6-8.4-8.4z"/></svg>'
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="currentColor" d="M85.9 45.1C79 42.2 72.7 38 67.4 32.6C60 25.2 54.7 15.9 52 5.8C51.9 5.3 51.7 4.9 51.3 4.6C50.9 4.3 50.5 4.2 50 4.2C49.5 4.2 49.1 4.3 48.7 4.6C48.3 4.9 48.1 5.3 48 5.8C45.3 15.9 40.1 25.2 32.6 32.6C27.3 38 21 42.2 14.1 45.1C11.4 46.3 8.6 47.2 5.8 48C5.3 48.1 4.9 48.3 4.6 48.7C4.3 49.1 4.2 49.5 4.2 50C4.2 50.5 4.3 50.9 4.6 51.3C4.9 51.7 5.3 51.9 5.8 52C8.6 52.7 11.4 53.7 14.1 54.9C21 57.8 27.3 62 32.6 67.4C40.1 74.8 45.4 84.1 48 94.2C48.1 94.7 48.3 95.1 48.7 95.4C49.1 95.7 49.5 95.8 50 95.8C50.5 95.8 50.9 95.7 51.3 95.4C51.7 95.1 51.9 94.7 52 94.2C52.7 91.4 53.7 88.6 54.9 85.9C57.8 79 62 72.7 67.4 67.4C74.8 60 84.1 54.6 94.2 52C94.7 51.9 95.1 51.7 95.4 51.3C95.7 50.9 95.8 50.5 95.8 50C95.8 49.5 95.7 49.1 95.4 48.7C95.1 48.3 94.7 48.1 94.2 48C91.4 47.2 88.6 46.3 85.9 45.1Z"/></svg>'
     },
     grok: {
       name: 'Grok',
@@ -55,72 +55,66 @@
 
   // Build URL for a service
   function buildUrl(service, prompt) {
-    const s = SERVICES[service];
+    var s = SERVICES[service];
     if (!s) return null;
-    return `${s.url}?${s.param}=${encodeURIComponent(prompt)}`;
+    return s.url + '?' + s.param + '=' + encodeURIComponent(prompt);
   }
 
   // Create button element
   function createButton(service, prompt, options) {
-    const s = SERVICES[service];
+    var s = SERVICES[service];
     if (!s) return null;
     
-    const url = buildUrl(service, prompt);
-    const isDark = options.theme === 'dark';
-    const size = options.size || 'default';
+    var url = buildUrl(service, prompt);
+    var isDark = options.theme === 'dark';
+    var size = options.size || 'default';
     
-    const sizes = {
-      sm: { btn: '36px', icon: '18px' },
-      default: { btn: '44px', icon: '22px' },
-      lg: { btn: '52px', icon: '26px' }
+    var sizes = {
+      sm: { btn: '40px', icon: '20px' },
+      default: { btn: '48px', icon: '28px' },
+      lg: { btn: '56px', icon: '32px' }
     };
     
-    const sz = sizes[size] || sizes.default;
+    var sz = sizes[size] || sizes.default;
     
-    const btn = document.createElement('a');
+    var btn = document.createElement('a');
     btn.href = url;
     btn.target = '_blank';
     btn.rel = 'noopener noreferrer';
-    btn.title = `Ask ${s.name}`;
+    btn.title = s.name;
     btn.innerHTML = s.icon;
     
     // Styles
-    Object.assign(btn.style, {
-      display: 'inline-flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      width: sz.btn,
-      height: sz.btn,
-      borderRadius: '10px',
-      color: isDark ? '#e5e5e5' : '#374151',
-      textDecoration: 'none',
-      transition: 'all 0.15s ease',
-      cursor: 'pointer'
-    });
+    btn.style.cssText = 'display:inline-flex;align-items:center;justify-content:center;' +
+      'width:' + sz.btn + ';height:' + sz.btn + ';border-radius:12px;' +
+      'color:' + (isDark ? '#e5e5e5' : '#374151') + ';' +
+      'text-decoration:none;transition:all 0.15s ease;cursor:pointer;background:transparent;';
     
     // SVG sizing
-    const svg = btn.querySelector('svg');
+    var svg = btn.querySelector('svg');
     if (svg) {
       svg.style.width = sz.icon;
       svg.style.height = sz.icon;
     }
     
     // Hover effects
-    btn.addEventListener('mouseenter', () => {
+    btn.onmouseenter = function() {
       btn.style.backgroundColor = isDark ? 'rgba(255,255,255,0.1)' : '#f3f4f6';
       btn.style.transform = 'translateY(-2px)';
-    });
-    btn.addEventListener('mouseleave', () => {
+    };
+    btn.onmouseleave = function() {
       btn.style.backgroundColor = 'transparent';
       btn.style.transform = 'none';
-    });
+    };
     
     return btn;
   }
 
   // Main render function
-  function render(selector, options = {}) {
-    const target = typeof selector === 'string' 
+  function render(selector, options) {
+    options = options || {};
+    
+    var target = typeof selector === 'string' 
       ? document.querySelector(selector) 
       : selector;
     
@@ -129,54 +123,61 @@
       return;
     }
     
-    const {
-      prompt = 'Tell me about this',
-      services = ['chatgpt', 'claude', 'perplexity', 'gemini', 'grok'],
-      theme = 'light',
-      size = 'default',
-      label = null
-    } = options;
+    var prompt = options.prompt || 'Tell me about this';
+    var services = options.services || ['chatgpt', 'claude', 'perplexity', 'gemini', 'grok'];
+    var theme = options.theme || 'light';
+    var size = options.size || 'default';
+    var heading = options.heading || null;
+    var description = options.description || null;
+    var align = options.align || 'left';
+    var isDark = theme === 'dark';
     
-    // Create container
-    const container = document.createElement('div');
-    Object.assign(container.style, {
-      display: 'flex',
-      alignItems: 'center',
-      gap: '8px',
-      flexWrap: 'wrap',
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
-    });
+    // Create wrapper
+    var wrapper = document.createElement('div');
+    wrapper.style.cssText = 'text-align:' + align + ';font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;';
     
-    // Add label if provided
-    if (label) {
-      const labelEl = document.createElement('span');
-      labelEl.textContent = label;
-      Object.assign(labelEl.style, {
-        fontSize: '14px',
-        fontWeight: '500',
-        color: theme === 'dark' ? '#9ca3af' : '#6b7280',
-        marginRight: '4px'
-      });
-      container.appendChild(labelEl);
+    // Add heading if provided
+    if (heading) {
+      var headingEl = document.createElement('p');
+      headingEl.textContent = heading;
+      headingEl.style.cssText = 'font-size:18px;font-weight:600;margin:0 0 8px 0;' +
+        'color:' + (isDark ? '#f9fafb' : '#1a1a1a') + ';';
+      wrapper.appendChild(headingEl);
     }
     
+    // Create buttons container
+    var container = document.createElement('div');
+    container.style.cssText = 'display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:16px 0;' +
+      (align === 'center' ? 'justify-content:center;' : '');
+    
     // Add buttons
-    services.forEach(service => {
-      const btn = createButton(service, prompt, { theme, size });
+    services.forEach(function(service) {
+      var btn = createButton(service, prompt, { theme: theme, size: size });
       if (btn) container.appendChild(btn);
     });
     
-    target.appendChild(container);
+    wrapper.appendChild(container);
     
-    return container;
+    // Add description if provided
+    if (description) {
+      var descEl = document.createElement('p');
+      descEl.textContent = description;
+      descEl.style.cssText = 'font-size:14px;margin:0;' +
+        'color:' + (isDark ? '#9ca3af' : '#6b7280') + ';';
+      wrapper.appendChild(descEl);
+    }
+    
+    target.appendChild(wrapper);
+    
+    return wrapper;
   }
 
   // Expose API
-  const AskAI = {
-    render,
-    buildUrl,
+  var AskAI = {
+    render: render,
+    buildUrl: buildUrl,
     services: Object.keys(SERVICES),
-    version: '1.0.0'
+    version: '1.1.0'
   };
 
   // Export
